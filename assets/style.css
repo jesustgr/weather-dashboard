@@ -65,7 +65,7 @@ nav h1{
 }
 .historyBtn{
     width: 100%;
-    background-color: rgba(0, 135, 131, 0.349);
+    background-color: red;
     color: white;
     font-size: 20px;
     margin-bottom: 10px;
