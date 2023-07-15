@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: red;
+    border-radius: 10px;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    position: relative;
+    border-radius: 0;
+}
+nav h1{
+    margin: 20px 200px;
+    letter-spacing: 2px;
+    font-size: 30px;
+    color: white;
+}
+
+#main-body{
+    margin: 30px 50px;
+    display: flex;
+    justify-content: left;
+}
+#right-section{
+    margin-left: 30px;
+    flex-basis:50%;
+}
+
+#main{
+    padding: 30px;
+    border: 3px solid black;
+    margin-bottom: 20px;
+}
+#main h2{
+    font-size: 30px;
+}
+#cards h3{
+    margin-bottom: 10px;
+}
+
+#inputCity{
+    margin-top: 20px;
+    padding: 5px;
+    border: 2px solid black;
+    outline: none;
+    font-size: 20px;
+}
+#searchBtn{
+    width: 100%;
+    margin: 20px 0;
+    padding: 5px;
+    font-size: 15px;
+    color: white;
+    background-color: red;
+    letter-spacing: 1px;
+    border: 2px solid black;
+}
+#searchBtn:hover{
+    background-color: white;
+    color: red;
+    transition: 0.25s;
+}
+.historyBtn{
+    width: 100%;
+    background-color: rgba(0, 135, 131, 0.349);
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border: none;
+}
+#line{
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+#genCards{
+    display: flex; /*FIX MAYBE */
+    justify-content: space-between;
+}
+.cardElStyle{
+    border: 2px solid black;
+    width: 15%;
+    background-color: red;
+    padding: 10px;
+}
