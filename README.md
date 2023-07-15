@@ -24,26 +24,15 @@ The screenshots below demonstrate the application's functionality.
 
 <img src="assets/image1.png" height="450" width="720" >
 
+This shows the initial layout of when the user opens the app. If the user used the app before, their search history is displayed below the search bar.
+
 <img src="assets/image2.png" height="450" width="720" >
 
+The user can type a city name into the search bar and click SEARCH. The current weather will appear in the top right and the 5 day forecast will appear below that. The city that the user searched for will be added to the search history.
 
 ## Learning Points 
 
-Event Handling: The code demonstrates how to handle click events using jQuery's on() function. By attaching a click event listener to the save button, we can capture user interactions and perform the necessary actions, such as saving the event description to local storage.
-
-DOM Traversal: The code utilizes DOM traversal methods provided by jQuery, such as parent(), siblings(), and find(). These methods allow us to navigate the DOM tree and select specific elements based on their relationships with other elements.
-
-Local Storage: The code shows how to use the localStorage API to store and retrieve data in the browser's local storage. By leveraging the setItem() and getItem() methods, we can persist the user's event descriptions even when the page is refreshed.
-
-Time Handling with Day.js: Day.js is a lightweight JavaScript library for manipulating and formatting dates and times. In this code, we use Day.js to get the current hour and format the date displayed in the header. By comparing the current hour with the hour of each time block, we can dynamically apply appropriate CSS classes.
-
-Iterating Over Elements: The code demonstrates how to iterate over multiple elements using jQuery's each() function. It allows us to perform actions on each element individually, such as applying CSS classes or loading saved event descriptions.
-
-CSS Class Manipulation: By adding or removing CSS classes dynamically, we can change the appearance of elements based on specific conditions. In this code, different CSS classes are applied to time blocks to indicate whether they are in the past, present, or future.
-
-Separation of Concerns: The code separates different functionalities into separate functions, making the code more modular and maintainable. Each function has a clear purpose, such as saving events, loading events, applying time block classes, and handling the save button click event.
-
-These learning points showcase some important concepts in web development, including event handling, DOM manipulation, data persistence, date/time handling, and code organization. Understanding these concepts is crucial for building interactive and dynamic web applications.
+This was my first time using server-side API's in a project.
 
 ## Author Info
 
