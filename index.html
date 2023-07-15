@@ -19,13 +19,34 @@
 
     <div id="main-body">
       <div id="search">
-          <h2>Search for a City:</h2>
-          <input placeholder="ie: San Francisco" id="inputCity">
-          <br>
-          <button id="searchBtn">Search</button>
+        <h2>Search for a City:</h2>
+        <input placeholder="ie: San Francisco" id="inputCity">
+        <br>
+        <button id="searchBtn">Search</button>
           
-          <div id="line"></div>
+        <div id="line"></div>
+
+        <div id="history"></div>
+
+        <div id="right-section">
+          <div id="main">
+              <h2>City</h2>
+              <h4></h4>
+              <h4>Temp: deg °f</h4>
+              <h4>Wind: 0 mph</h4>
+              <h4>Humidity: 0%</h4>
+          </div>
+
+          <div id="cards">
+            <h3>5 Day Forecast:</h3>
+            <div id="genCards">   
+          </div>
+        </div>
+      </div>
+    </div>
+      
         
 </body>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 <script src="assets/script.js"></script>
 </html>
