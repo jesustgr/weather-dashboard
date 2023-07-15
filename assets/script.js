@@ -5,9 +5,32 @@ $(document).ready(function() {
     var lat;
     var long;
 
+    function displayHistory() {
+        for (var i = 0; i < localStorage.length; i++) {
+          var key = localStorage.key(i);
+          var data = JSON.parse(localStorage.getItem(key));
+          
+          (function(key) { // Create a closure for each iteration
+            var newEl = $("<button>");
+            
+            newEl.text(key);
+            newEl.attr("class", "historyBtn");
+            $("#history").append(newEl);
+            newEl.on("click", async function() {
+              $("#genCards").html("");
+              console.log("tester");
+              var latitude = await getLat(key);
+              var longitude = await getLon(key);
+              console.log("tester");
+              renderMain(key, latitude, longitude);
+            });
+          })(key); // Pass 'key' as an argument to the IIFE
+        }
+      }
+
     function getLat(name) {
         return new Promise((resolve, reject) => {
-          var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + name + "&limit=5&appid=9bce6875713db412816a04531af13ead";
+          var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + name + "&limit=5&appid=87e016e5e89b444a3ab62dbf9f034527";
           fetch(url)
             .then(function(response) {
               return response.json();
@@ -24,7 +47,7 @@ $(document).ready(function() {
 
     function getLon(name) {
         return new Promise((resolve, reject) => {
-          var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + name + "&limit=5&appid=9bce6875713db412816a04531af13ead";
+          var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + name + "&limit=5&appid=87e016e5e89b444a3ab62dbf9f034527";
           fetch(url)
             .then(function(response) {
               return response.json();
@@ -88,5 +111,9 @@ $(document).ready(function() {
         renderSearch(inputCity, lat, lon);
         renderMain(inputCity, lat, lon);
       });
+      function init(){
+        displayHistory(); //displays history from local storage and appends to display div
+      }
+      init();
 
 });
