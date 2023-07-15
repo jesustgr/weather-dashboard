@@ -38,10 +38,16 @@ nav h1{
     border: 3px solid royalblue;
     margin-bottom: 20px;
     text-align: center;
+    background-color: lightgray;
 }
 #main h2 {
     font-size: 30px;
-    color: black;
+    color: navy;
+}
+
+#main h4{
+    font-size: 20px;
+    color: navy;
 }
 #cards h3{
     margin-bottom: 10px;
