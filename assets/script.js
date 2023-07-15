@@ -104,6 +104,29 @@ $(document).ready(function() {
             });
     }
 
+    function renderFiveDay(name, latitude, longitude){
+        var timeNum = 7;
+        $("#genCards").empty();
+        var url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + latitude + "&lon=" + longitude + "&appid=9bce6875713db412816a04531af13ead&units=imperial";
+        fetch(url)
+          .then(function (response){
+            return response.json();
+          })
+          .then(function (data){
+            var dateEl = dayjs().format('MM/DD/YY');
+            $("#main h2").text(name + " " + dateEl);
+            var imgUrl = "https://openweathermap.org/img/wn/" + data.weather[0].icon +".png";
+            var image = $('<img>').attr('src', imgUrl).attr('alt', 'Weather Icon');
+            $('#main h4').first().empty();
+            $('#main h4').first().append(image);
+
+            $("#main h4").eq(1).text("Temp: "+ data.main.temp + " °f");
+            $("#main h4").eq(2).text("Wind: "+ data.wind.speed + " mph");
+            $("#main h4").eq(3).text("Humidity: "+ data.main.humidity + " %");
+            renderFiveDay(name, latitude, longitude);
+        });
+    }   
+
     searchBtnEl.on("click", async function() {
         var inputCity = $("#inputCity").val();
         var lat = await getLat(inputCity);
