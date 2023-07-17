@@ -1,16 +1,16 @@
 $(document).ready(function() {
-    // global vars here 
+    // global variables
     var searchBtnEl = $("#searchBtn");
-    
     var lat;
     var long;
-
+    
+    // function to show history under search bar
     function displayHistory() {
         for (var i = 0; i < localStorage.length; i++) {
           var key = localStorage.key(i);
           var data = JSON.parse(localStorage.getItem(key));
           
-          (function(key) { // Create a closure for each iteration
+          (function(key) {
             var newEl = $("<button>");
             
             newEl.text(key);
@@ -24,13 +24,14 @@ $(document).ready(function() {
               console.log("tester");
               renderMain(key, latitude, longitude);
             });
-          })(key); // Pass 'key' as an argument to the IIFE
+          })(key);
         }
       }
 
+    // functions to get longitude and latitude for API calls  
     function getLat(name) {
         return new Promise((resolve, reject) => {
-          var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + name + "&limit=5&appid=87e016e5e89b444a3ab62dbf9f034527";
+          var url = "https://api.openweathermap.org/geo/1.0/direct?q=" + name + "&limit=5&appid=87e016e5e89b444a3ab62dbf9f034527";
           fetch(url)
             .then(function(response) {
               return response.json();
@@ -47,7 +48,7 @@ $(document).ready(function() {
 
     function getLon(name) {
         return new Promise((resolve, reject) => {
-          var url = "http://api.openweathermap.org/geo/1.0/direct?q=" + name + "&limit=5&appid=87e016e5e89b444a3ab62dbf9f034527";
+          var url = "https://api.openweathermap.org/geo/1.0/direct?q=" + name + "&limit=5&appid=87e016e5e89b444a3ab62dbf9f034527";
           fetch(url)
             .then(function(response) {
               return response.json();
@@ -62,6 +63,7 @@ $(document).ready(function() {
         });
     }
 
+    //function to display right side of page
     function renderSearch(name, latitude, longitude){
         if (name === ""){
             return;
@@ -132,7 +134,7 @@ $(document).ready(function() {
             }
         });
     }   
-
+    // function for search button
     searchBtnEl.on("click", async function() {
         var inputCity = $("#inputCity").val();
         var lat = await getLat(inputCity);
@@ -140,8 +142,9 @@ $(document).ready(function() {
         renderSearch(inputCity, lat, lon);
         renderMain(inputCity, lat, lon);
       });
+      //maintain history
       function init(){
-        displayHistory(); //displays history from local storage and appends to display div
+        displayHistory();
       }
       init();
 
