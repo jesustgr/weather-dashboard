@@ -2,15 +2,16 @@
 *{
     margin: 0;
     padding: 0;
-    color: royalblue;
+    color: navy;
     border-radius: 10px;
+    font-family: "Encode Sans Expanded";    
 }
 
 /* styling for top of page */
 nav{
     display: flex;
     justify-content: center;
-    background-color: royalblue;
+    background-color: navy;
     position: relative;
     border-radius: 0;
 }
@@ -35,10 +36,10 @@ nav h1{
 }
 #main{
     padding: 30px;
-    border: 3px solid royalblue;
+    border: 3px solid black;
     margin-bottom: 20px;
     text-align: center;
-    background-color: lightgray;
+    background-color: white;
 }
 #main h2 {
     font-size: 30px;
@@ -67,20 +68,20 @@ nav h1{
     padding: 5px;
     font-size: 15px;
     color: white;
-    background-color: royalblue;
+    background-color: navy;
     letter-spacing: 1px;
     border: 2px solid black;
 }
 #searchBtn:hover{
     background-color: white;
-    color: royalblue;
+    color: navy;
     transition: 0.25s;
 }
 
 /* styling for search history */
 .historyBtn{
     width: 100%;
-    background-color: gray;
+    background-color: lightblue;
     color: white;
     font-size: 20px;
     margin-bottom: 10px;
@@ -99,7 +100,7 @@ nav h1{
 .cardElStyle{
     border: 2px solid black;
     width: 15%;
-    background-color: royalblue;
+    background-color: navy;
     padding: 10px;
     text-align: center;
 }
